@@ -23,6 +23,8 @@ refs.form.addEventListener('submit', onFormSubmit);
 refs.inputEmail.addEventListener('input', onEmailInput);
 refs.inputMessage.addEventListener('input', onInputMessage);
 
+getDataLocalStorage();
+
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 // onGetDataLocalStorage();
@@ -63,13 +65,13 @@ function onEmailInput(e) {
 function onInputMessage(e) {
   const inputMessage = e.currentTarget.value;
   localStorage.setItem(LOCALSTORAGE_KEY, inputMessage);
-  console.log(inputMessage);
+  //   console.log(inputMessage);
 }
 
 function getDataLocalStorage() {
   const savedMessage = localStorage.getItem('LOCALSTORAGE_KEY');
   console.log(savedMessage);
-  //   if (savedMessage) {
-  //     console.log(savedMessage);
-  //   }
+  if (savedMessage) {
+    console.log(savedMessage);
+  }
 }
