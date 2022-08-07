@@ -31,11 +31,12 @@ function onFormSubmit(event) {
 
 function onInitForm() {
   let savedMessage = localStorage.getItem(LOCALSTORAGE_KEY);
+
   if (savedMessage) {
     savedMessage = JSON.parse(savedMessage);
     console.log(savedMessage);
 
-    inputRef.textContent = savedMessage.email;
-    messageRef.textContent = savedMessage.message;
+    inputRef.value = savedMessage.email || '';
+    messageRef.value = savedMessage.message || '';
   }
 }
