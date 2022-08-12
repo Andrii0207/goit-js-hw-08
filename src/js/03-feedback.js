@@ -19,6 +19,16 @@ function onFormDataInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+
+  const formElements = event.target.elements;
+  const email = formElements.email.value;
+  const message = formElements.message.value;
+
+  if (email === '' || message === '') {
+    alert('Please fill in all fields of the form!');
+    return;
+  }
+
   console.log('email:', event.target.email.value);
   console.log('message:', event.target.message.value);
   event.target.reset();
