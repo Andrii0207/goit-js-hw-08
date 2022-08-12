@@ -19,6 +19,8 @@ function onFormDataInput(event) {
 
 function onFormSubmit(event) {
   event.preventDefault();
+  console.log('email:', event.target.email.value);
+  console.log('message:', event.target.message.value);
   event.target.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }
