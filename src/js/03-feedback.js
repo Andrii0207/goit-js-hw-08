@@ -29,21 +29,15 @@ function onFormSubmit(event) {
     return;
   }
 
-  console.log('email:', event.target.email.value);
-  console.log('message:', event.target.message.value);
+  console.log(localStorage.getItem(LOCALSTORAGE_KEY));
   event.target.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }
 
 function onInitForm() {
   let savedMessage = localStorage.getItem(LOCALSTORAGE_KEY);
-
   if (savedMessage) {
     savedMessage = JSON.parse(savedMessage);
-    console.log(savedMessage);
-    console.log('email:', savedMessage.email);
-    console.log('message:', savedMessage.message);
-
     inputRef.value = savedMessage.email || '';
     messageRef.value = savedMessage.message || '';
   }
