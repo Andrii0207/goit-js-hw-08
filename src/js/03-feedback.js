@@ -29,7 +29,7 @@ function onFormSubmit(event) {
     return;
   }
 
-  console.log(localStorage.getItem(LOCALSTORAGE_KEY));
+  console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
   event.target.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
 }
